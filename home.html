@@ -1,11 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./styles/Home/home.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #111;
+        }
+
+        .topGallery {
+            width: 600px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            will-change: transform;
+        }
+
+        .gallery img {
+            width: 600px;
+            height: 300px;
+            object-fit: cover;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div class="header">
+        <div class="nav-bar">
+            <div class="nav-left-side">
+                <img src="./imgs/logos/rog-brandlogo.net_.png" alt="ROG Logo">
+            </div>
+            <div class="nav-center-side">
+                <ul>
+                    <li><a href="">PRODUCTS</a></li>
+                    <li><a href="">INNOVATION</a></li>
+                    <li><a href="">DOWNLOADS</a></li>
+                    <li><a href="">COMMUNITY</a></li>
+                    <li><a href="">WHAT'S HOT</a></li>
+                    <li><a href="">SUPPORT</a></li>
+                </ul>
+            </div>
+            <div class="nav-right-side">
+                <div class="asuslogo">
+                    <a href="asus">
+                        <img src="./imgs/logos/AsusTek-black-logo.png" alt="">
+                    </a>
+                </div>
+                <div class="searchAndLogin">
+                    <a href=""><i class="bi bi-search"></i></a>
+                    <a href=""><i class="bi bi-person-fill"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="loginAd">
+            <h2>Create an account for better product support!</h2>
+        </div>
+    </div>
+    <div class="topGallery">
+        <div class="gallery">
+            <img src="./imgs/ads/desktopRaffle.png" alt="">
+            <img src="./imgs/ads/handheldAd.png" alt="">
+            <img src="./imgs/ads/hatsuneMiku.png" alt="">
+            <img src="./imgs/ads/intelLaptopAd.png" alt="">
+            <img src="./imgs/ads/laptopAd.png" alt="">
+            <img src="./imgs/ads/n1ReadersChoice.png" alt="">
+        </div>
+    </div>
+
+    <script>
+        const gallery = document.querySelector('.gallery');
+        const images = document.querySelectorAll('.gallery img');
+
+        let index = 0;
+        const totalImages = images.length;
+        const interval = 3000; // milliseconds
+
+        function autoSwipe() {
+            index++;
+            if (index >= totalImages) {
+                index = 0;
+            }
+            updateGallery();
+        }
+
+        function updateGallery() {
+            const offset = index * images[0].clientWidth;
+            gallery.style.transform = `translateX(-${offset}px)`;
+        }
+
+        // Auto swipe every few seconds
+        setInterval(autoSwipe, interval);
+
+        // Optional: Adjust on window resize
+        window.addEventListener('resize', updateGallery);
+
+    </script>
 </body>
+
 </html>
