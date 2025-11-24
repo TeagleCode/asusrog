@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Slider</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+
+    .slider-container {
+      position: relative;
+      width: 70%;
+      overflow: hidden;
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.3s ease-in-out;
+      gap: 20px;
+    }
+
+    .slide {
+      min-width: 200px;
+      flex-shrink: 0;
+    }
+
+    .slide img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    button.prev, button.next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      font-size: 2rem;
+      padding: 0 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      z-index: 2;
+    }
+
+    button.prev { left: 10px; }
+    button.next { right: 10px; }
+  </style>
+</head>
+<body>
+
+  <div class="slider-container">
+    <button class="prev">&#10094;</button>
+    <div class="slider">
+      <div class="slide"><img src="https://via.placeholder.com/200x150?text=Product+1" alt="Product 1"></div>
+      <div class="slide"><img src="https://via.placeholder.com/200x150?text=Product+2" alt="Product 2"></div>
+      <div class="slide"><img src="https://via.placeholder.com/200x150?text=Product+3" alt="Product 3"></div>
+      <div class="slide"><img src="https://via.placeholder.com/200x150?text=Product+4" alt="Product 4"></div>
+      <div class="slide"><img src="https://via.placeholder.com/200x150?text=Product+5" alt="Product 5"></div>
+    </div>
+    <button class="next">&#10095;</button>
+  </div>
+
+  <script>
+    const slider = document.querySelector('.slider');
+    const slides = document.querySelectorAll('.slide');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+
+    let currentIndex = 0;
+
+    function updateSlider() {
+      const slideWidth = slides[0].offsetWidth + 20; // include gap
+      slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    }
+
+    prev.addEventListener('click', () => {
+      if (currentIndex > 0) currentIndex--;
+      updateSlider();
+    });
+
+    next.addEventListener('click', () => {
+      if (currentIndex < slides.length - 3) currentIndex++; // show 3 slides at a time
+      updateSlider();
+    });
+  </script>
+
+</body>
+</html>
