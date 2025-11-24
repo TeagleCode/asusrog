@@ -45,6 +45,7 @@
 
                 .nav-right-side {
                     padding-left: 5%;
+                    padding-right: 5%;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -90,16 +91,22 @@
         }
 
         .topGallery {
-            width: 100%;
+            width: 1200px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
 
-            .gallery {
-                width: 125%;
+        .gallery {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            will-change: transform;
+        }
 
-                img {
-                    width: 100%;
-                }
-            }
-
+        .gallery img {
+            width: 1000px;
+            height: 400px;
+            object-fit: cover;
         }
 
         

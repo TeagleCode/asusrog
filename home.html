@@ -11,26 +11,9 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./styles/Home/home.css">
- 
+
     <style>
-        .topGallery {
-            width: 600px;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-        }
 
-        .gallery {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            will-change: transform;
-        }
-
-        .gallery img {
-            width: 600px;
-            height: 300px;
-            object-fit: cover;
-        }
     </style>
 </head>
 
@@ -53,7 +36,7 @@
             <div class="nav-right-side">
                 <div class="asuslogo">
                     <a href="asus">
-                        <img src="./imgs/logos/AsusTek-black-logo.png" alt="" >
+                        <img src="./imgs/logos/AsusTek-black-logo.png" alt="">
                     </a>
                 </div>
                 <div class="searchAndLogin">
@@ -77,8 +60,75 @@
         </div>
     </div>
 
+    <div class="product-categories-slideshow-wrapper">
+        <div class="product-categories-slideshow-title">
+            <h1>EXPLORE OUR PRODUCTS</h1>
+        </div>
+        <div class="product-slideshow">
+            <button><i class="bi bi-caret-left-fill"></i></button>
+            <div class="products-categories-icons">
+                <div class="laptops-icon">
+                    <a href="">
+                        <img src="../imgs/products/laptops/laptops-thumbnail.webp" alt="">
+                        <h4>Laptops</h4>
+                    </a>
 
-    
+                </div>
+                <div class="motherboards-icon">
+                    <a href="">
+                        <img src="../imgs/products/mobos/mobos-thumbnail.webp" alt="">
+                        <h4>Motherboards</h4>
+                    </a>
+
+                </div>
+                <div class="gpu-icon">
+                    <a href="">
+                        <img src="../imgs/products/gpus/gpus-thumbnail.webp" alt="">
+                        <h4>Graphics Cards</h4>
+                    </a>
+                </div>
+                <div class="monitors-icon">
+                    <a href="">
+                        <img src="./imgs/products/monitors/monitors-thumbnail.webp" alt="">
+                        <h4>Monitors</h4>
+                    </a>
+                </div>
+                <div class="phones-icon">
+                    <a href="">
+                        <img src="./imgs/products/phones/phones-thumbnail.webp" alt="">
+                        <h4>Phones</h4>
+                    </a>
+                </div>
+                <div class="cooling-icon">
+                    <a href="">
+                        <img src="./imgs/products/coolers/coolers-thumbnail.webp" alt="">
+                        <h4>Cooling</h4>
+                    </a>
+                </div>
+
+                <div class="desktop-icon">
+                    <a href="">
+                        <img src="./imgs/products/prebuilts/prebuilts-thumbnail.webp" alt="">
+                        <h4>Desktops</h4>
+                    </a>
+                </div>
+                <div class="psu-icon">
+                    <a href="">
+                        <img src="./imgs/products/psus/psus-thumbnail.webp" alt="">
+                        <h4>Power Supply Units</h4>
+                    </a>
+                </div>
+                <div class="egd">
+                    <a href="">
+                        <img src="./imgs/products/EGDs/EGDs-thumbnail.webp" alt="">
+                        <h4>External Graphic Docks</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <script>
         const gallery = document.querySelector('.gallery');
