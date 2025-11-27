@@ -4,7 +4,8 @@
         height: 400%;
         margin: 0;
         padding: 0;
-        background-color: rgb(10, 10, 10);
+        background-color: rgb(255, 255, 255);
+
 
         .header {
             .nav-bar {
@@ -91,25 +92,65 @@
         }
 
         .topGallery {
-            width: 1000px;
+            width: 100dvw;
             overflow: hidden;
-            border-radius: 10px;
+
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+            .gallery {
+                display: flex;
+                transition: transform 0.5s ease-in-out;
+                will-change: transform;
+            }
+
+            .gallery img {
+                width: 1000px;
+                height: 400px;
+                object-fit: cover;
+            }
+
+
         }
 
-        .gallery {
+        .product-categories-slideshow-wrapper {
             display: flex;
-            transition: transform 0.5s ease-in-out;
-            will-change: transform;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 25px;
+
+            .product-categories-slideshow-title {
+                h1 {
+                    font-weight: 600;
+                    font-family: sans-serif;
+                    font-size: 40px;
+                }
+            }
+
+            .product-slideshow {
+                display: flex;
+                overflow: hidden;
+                position: relative;
+
+                .product-categories-icons {
+                    display: flex;
+                    overflow: hidden;
+                    transition: transform 0.3s ease-in-out;
+                    gap: 20px;
+                    div{
+                        min-width: 150px;
+                        flex-shrink: 0;
+                        img{
+                            width: 100%;
+                            
+                        }
+                    }
+                }
+            }
+
+
+
         }
 
-        .gallery img {
-            width: 1000px;
-            height: 400px;
-            object-fit: cover;
-        }
-
-        
     }
-
 }
